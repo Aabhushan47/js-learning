@@ -20,11 +20,13 @@
 
 // math
 
-console.log(Math);
-console.log(Math.abs(-9));
-console.log(Math.round(9.456));
-console.log(Math.ceil(9.456));
-console.log(Math.floor(Math.sqrt(26)));
+// console.log(Math);
+// console.log(Math.abs(-9));
+// console.log(Math.round(9.456));
+// console.log(Math.ceil(9.456));
+// console.log(Math.floor(Math.sqrt(26)));
 
 const min = 10;
 const max = 20;
+
+console.log(Math.floor(Math.random() * (max - min + 1) + min));
