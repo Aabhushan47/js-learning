@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+h1{
+    text-align: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+}
+button{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+}
+
+button#gray{
+    background-color: grey;
+}
+
+button#blue{
+    background-color: blue;
+}
+
+button#teal{
+    background-color: teal;
+}
+
+button#yellow{
+    background-color: yellow;
+}
+
+button#white{
+    background-color: white;
+}
