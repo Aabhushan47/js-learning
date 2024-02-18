@@ -1,0 +1,12 @@
+.container{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock{
+    background-color: wheat;
+    padding: 25px 30px;
+    font-size: 40px;
+}
