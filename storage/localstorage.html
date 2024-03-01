@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="remove">Remove</button>
+</body>
+<script>
+    //string to object(JSON.parse)
+    //object to string(JSON.stringify)
+    document.querySelector("#remove").addEventListener("click", function () {
+        localStorage.removeItem("name")
+    })
+    const store = localStorage.setItem("name", "Aabhushan")
+
+    const view = localStorage.getItem("name")
+    // console.log(view);
+
+    const student = {
+        "firstname": "Ram",
+        "lastname": "Kumar",
+        "phno": 9812194850,
+        "address": "Tyanglaphanta"
+    }
+    localStorage.setItem("data", JSON.stringify(student))
+
+    const data = JSON.parse(localStorage.getItem("data"))
+    console.log(data.phno);
+
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Set Interval</h1>
+    <h2></h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalId;
+    function showDate() {
+        document.querySelector("h2").innerHTML =
+            new Date().toLocaleTimeString()
+    }
+
+    function changeDate() { intervalId = setInterval(showDate, 1000) }
+
+    function stopChange() {
+        clearInterval(intervalId)
+    }
+
+    const startDate = document.querySelector("#start").addEventListener("click",
+        changeDate
+    )
+
+    const stopDate = document.querySelector("#stop").addEventListener("click", stopChange
+    )
+</script>
+
+</html>

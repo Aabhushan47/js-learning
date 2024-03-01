@@ -6,6 +6,7 @@ const result = document.querySelector(".lowOrHi");
 const prevGuess = document.querySelector(".guesses");
 const remGuess = document.querySelector(".lastResult");
 const error = document.querySelector(".error");
+const p = document.createElement("p");
 
 let prevResult = [];
 let numGuess = 10;
@@ -29,7 +30,7 @@ function validateGuess(guess) {
     error.innerHTML = `Enter Number Less Than 100`;
   } else {
     prevResult.push(guess);
-    if (numGuess <= 0) {
+    if (numGuess == 1) {
       displayGuess(guess);
       displayMessage(`You Lost The Number Was ${randomNo}`);
       endGame();
@@ -53,7 +54,6 @@ function checkGuess(guess) {
 
 function displayGuess(guess) {
   userInput.value = "";
-  //   console.log(guess);
   prevGuess.innerHTML += `${guess},`;
   numGuess--;
   remGuess.innerHTML = `${numGuess}`;
@@ -66,4 +66,22 @@ function displayMessage(message) {
 function endGame() {
   userInput.value = "";
   userInput.setAttribute("disabled", "");
+  p.classList.add("button");
+  result.appendChild(p);
+  p.innerHTML = "Start New Game";
+  playGame = false;
+  startNewGame();
+}
+
+function startNewGame() {
+  p.addEventListener("click", (e) => {
+    randomNo = parseInt(Math.random() * 99 + 1);
+    prevResult = [];
+    numGuess = 10;
+    userInput.removeAttribute("disabled");
+    result.removeChild(p);
+    displayMessage("");
+    prevGuess.innerHTML = "";
+    remGuess.innerHTML = numGuess;
+  });
 }
